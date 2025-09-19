@@ -17,8 +17,8 @@ import { Book, Briefcase, Calendar, Star } from 'lucide-react';
 const mentors = [
   {
     name: 'Ananya Sharma',
-    avatar: 'https://picsum.photos/seed/female-counsellor/150/150',
-    avatarHint: 'woman portrait',
+    avatar: 'https://picsum.photos/seed/professional-woman/150/150',
+    avatarHint: 'professional woman',
     expertise: ['Career Coaching', 'Software Engineering', 'Interview Prep'],
     experience: '10+ Years at Google & Amazon',
     rating: 4.9,
@@ -26,8 +26,8 @@ const mentors = [
   },
   {
     name: 'Rohan Verma',
-    avatar: 'https://picsum.photos/seed/male-counsellor/150/150',
-    avatarHint: 'man portrait',
+    avatar: 'https://picsum.photos/seed/professional-man/150/150',
+    avatarHint: 'professional man',
     expertise: ['Higher Education', 'Study Abroad', 'Data Science'],
     experience: 'Harvard Alumnus, Education Consultant',
     rating: 4.8,
@@ -35,8 +35,8 @@ const mentors = [
   },
   {
     name: 'Priya Mehta',
-    avatar: 'https://picsum.photos/seed/woman-entrepreneur/150/150',
-    avatarHint: 'woman smiling',
+    avatar: 'https://picsum.photos/seed/business-woman/150/150',
+    avatarHint: 'business woman',
     expertise: ['Entrepreneurship', 'Business Strategy', 'Marketing'],
     experience: 'Founder of a successful tech startup',
     rating: 5.0,
