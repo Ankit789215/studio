@@ -51,7 +51,7 @@ export default function CollegesPage() {
           {filteredColleges.map((college) => {
             const FacilityIcon = facilityIcons[college.facilities[0]] || University;
             return (
-              <Card key={college.id} className="flex flex-col hover:shadow-lg hover:scale-105 transition-all duration-200">
+              <Card key={college.id} className="flex flex-col hover:bg-muted/50 transition-colors duration-150">
                 <CardHeader>
                   <CardTitle>{college.name}</CardTitle>
                   <CardDescription className="flex items-center gap-2 pt-1">
