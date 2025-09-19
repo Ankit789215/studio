@@ -55,14 +55,14 @@ export default function CounsellingPage() {
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {mentors.map((mentor) => (
-          <Card key={mentor.name} className="flex flex-col hover:shadow-lg transition-shadow">
-            <CardHeader className="items-center text-center">
+          <Card key={mentor.name} className="flex flex-col text-center hover:shadow-lg transition-shadow">
+            <CardHeader className="items-center">
               <Avatar className="h-24 w-24 mb-4">
                 <AvatarImage src={mentor.avatar} alt={mentor.name} />
                 <AvatarFallback>{mentor.name.charAt(0)}</AvatarFallback>
               </Avatar>
               <CardTitle>{mentor.name}</CardTitle>
-              <CardDescription className="flex items-center gap-2 pt-1">
+              <CardDescription className="flex items-center justify-center gap-2 pt-1">
                 <Briefcase className="h-4 w-4" /> {mentor.experience}
               </CardDescription>
               <div className="flex items-center gap-1 pt-2">
@@ -72,7 +72,7 @@ export default function CounsellingPage() {
               </div>
             </CardHeader>
             <CardContent className="flex-grow space-y-4">
-              <div>
+              <div className="text-left">
                 <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
                   <Book className="h-4 w-4" />
                   Expertise
