@@ -100,7 +100,7 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <Card className="md:col-span-1 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
+        <Card className="md:col-span-1 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-primary/30">
           <CardHeader className="flex flex-row items-center gap-4 pb-4">
             <User className="h-8 w-8 text-primary" />
             <div>
@@ -122,7 +122,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
         
-        <Card className="md:col-span-2 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
+        <Card className="md:col-span-2 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-primary/30">
             <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                     <Sparkles className="text-accent"/>
@@ -139,7 +139,7 @@ export default function DashboardPage() {
 
       <div className="grid gap-6 md:grid-cols-4">
           {quickLinks.map((link) => (
-              <Card key={link.href} className="transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-primary/30 flex flex-col">
+              <Card key={link.href} className="transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-primary/30 flex flex-col">
                   <CardHeader className="pb-4">
                       <div className="flex items-center gap-4">
                         <link.icon className="w-6 h-6 text-muted-foreground" />
@@ -161,7 +161,7 @@ export default function DashboardPage() {
           ))}
       </div>
       
-      <Card className="transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
+      <Card className="transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-primary/30">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Target className="text-primary" />
