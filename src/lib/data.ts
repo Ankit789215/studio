@@ -322,6 +322,8 @@ export type College = {
   eligibility: string;
   medium: string[];
   facilities: string[];
+  lat: number;
+  lon: number;
 };
 
 export const colleges: College[] = [
@@ -334,6 +336,8 @@ export const colleges: College[] = [
       eligibility: 'Min. 55% in 12th Grade',
       medium: ['English', 'Hindi'],
       facilities: ['Hostel', 'Lab', 'Library', 'Internet'],
+      lat: 28.6139,
+      lon: 77.2090
     },
     {
       id: 'gc-mumbai',
@@ -344,6 +348,8 @@ export const colleges: College[] = [
       eligibility: 'Min. 60% in 12th Grade + Entrance Test',
       medium: ['English', 'Marathi'],
       facilities: ['Lab', 'Library', 'Internet'],
+      lat: 19.0760,
+      lon: 72.8777
     },
     {
       id: 'gc-kolkata',
@@ -354,6 +360,8 @@ export const colleges: College[] = [
       eligibility: 'Merit-based admission',
       medium: ['English', 'Bengali'],
       facilities: ['Hostel', 'Lab', 'Library', 'Canteen'],
+      lat: 22.5726,
+      lon: 88.3639
     },
     {
         id: 'gc-chennai',
@@ -364,6 +372,8 @@ export const colleges: College[] = [
         eligibility: 'Min. 60% in 12th Grade',
         medium: ['English', 'Tamil'],
         facilities: ['Library', 'Sports Complex', 'Internet'],
+        lat: 13.0827,
+        lon: 80.2707
     },
     {
         id: 'gc-bangalore',
@@ -374,6 +384,8 @@ export const colleges: College[] = [
         eligibility: 'Min. 50% in 12th Grade + Interview',
         medium: ['English'],
         facilities: ['Hostel', 'Lab', 'Library', 'Auditorium'],
+        lat: 12.9716,
+        lon: 77.5946
     }
   ];
   
