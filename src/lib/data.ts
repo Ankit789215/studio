@@ -28,6 +28,11 @@ import {
   Beaker,
   Paintbrush,
   Percent,
+  Leaf,
+  Lightbulb,
+  MousePointerSquare,
+  Shield,
+  Handshake,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -201,6 +206,34 @@ export const courses: Course[] = [
         }
     ]
   },
+   {
+    id: 'bsc-biotech',
+    name: 'B.Sc. in Biotechnology',
+    stream: 'Science',
+    icon: Leaf,
+    description: 'A cutting-edge field combining biology and technology to create products for healthcare, agriculture, and the environment.',
+    careerPaths: [
+        { name: 'Biotechnologist', icon: TestTube2 },
+        { name: 'Clinical Research Associate', icon: Heart },
+        { name: 'Genetic Counselor', icon: Dna },
+        { name: 'Environmental Scientist', icon: Globe },
+    ],
+    furtherStudies: ['M.Sc. in Biotechnology', 'M.Tech in Biomedical Engineering', 'Ph.D. in Life Sciences'],
+    govExams: ['DBT-JRF', 'ICMR-JRF', 'Scientist at DRDO'],
+    careerGrowth: "A rapidly evolving field with vast opportunities in research, pharmaceuticals, and AgriTech. A postgraduate degree is crucial for career advancement into research and leadership roles.",
+    packages: {
+        entry: "₹4-7 Lakhs",
+        experienced: "₹10-30 Lakhs"
+    },
+    videos: ["https://www.youtube.com/watch?v=1z-pB_g1rso"],
+    topCompanies: ["Biocon", "Serum Institute of India", "Bharat Biotech", "Syngene", "Novozymes"],
+    topPeople: [
+        {
+            name: "Kiran Mazumdar-Shaw",
+            story: "A pioneer of the biotechnology industry in India, she founded Biocon from her garage. She broke barriers as a woman entrepreneur in a male-dominated field, building a globally recognized biotech company."
+        }
+    ]
+  },
   {
     id: 'bsc-foodtech',
     name: 'B.Sc. in Food Technology',
@@ -366,6 +399,62 @@ export const courses: Course[] = [
       {
         name: "Gail Omvedt",
         story: "An American-born Indian sociologist and human rights activist, she dedicated her life to anti-caste movements and farmers' rights in India, using her academic knowledge to fuel social change."
+      }
+    ]
+  },
+    {
+    id: 'bdes-ux',
+    name: 'B.Des. in UX/UI Design',
+    stream: 'Arts',
+    icon: MousePointerSquare,
+    description: 'Focuses on creating user-friendly and aesthetically pleasing digital products like websites and apps. A blend of creativity, psychology, and technology.',
+    careerPaths: [
+        { name: 'UX Designer', icon: User },
+        { name: 'UI Designer', icon: Palette },
+        { name: 'Product Designer', icon: Lightbulb },
+        { name: 'Interaction Designer', icon: Handshake },
+    ],
+    furtherStudies: ['M.Des in Interaction Design', 'M.Sc. in Human-Computer Interaction'],
+    govExams: ['UI/UX Designer at NIC', 'DRDO'],
+    careerGrowth: "Explosive growth in the tech industry. Strong demand for skilled designers leads to rapid career progression from junior to senior, lead, and principal designer roles. Freelance opportunities are also abundant.",
+    packages: {
+        entry: "₹6-10 Lakhs",
+        experienced: "₹20-50+ Lakhs"
+    },
+    videos: ["https://www.youtube.com/watch?v=cKsu3Vw6SjI"],
+    topCompanies: ["Google", "Microsoft", "Flipkart", "Zomato", "Swiggy"],
+    topPeople: [
+        {
+            name: "Don Norman",
+            story: "A cognitive scientist who coined the term 'User Experience.' His book 'The Design of Everyday Things' is a must-read for any aspiring designer, emphasizing empathy and user-centered design."
+        }
+    ]
+  },
+  {
+    id: 'ba-public-policy',
+    name: 'B.A. in Public Policy',
+    stream: 'Arts',
+    icon: Shield,
+    description: 'Learn to analyze, evaluate, and solve societal problems through the design and implementation of effective government policies.',
+    careerPaths: [
+        { name: 'Policy Analyst', icon: Scale },
+        { name: 'Legislative Assistant', icon: Landmark },
+        { name: 'Non-Profit Program Manager', icon: Heart },
+        { name: 'Corporate Social Responsibility (CSR) Manager', icon: Building },
+    ],
+    furtherStudies: ['Masters in Public Policy (MPP)', 'MBA', 'LL.B.'],
+    govExams: ['UPSC Civil Services', 'RBI Grade B', 'NITI Aayog Young Professionals'],
+    careerGrowth: "Excellent for careers in civil services, think tanks, and international organizations like the World Bank. Combines analytical rigor with a focus on social impact, leading to influential roles.",
+    packages: {
+      entry: "₹5-8 Lakhs",
+      experienced: "₹15-40 Lakhs (Varies by sector)"
+    },
+    videos: ["https://www.youtube.com/watch?v=sBrsg-c8J1g"],
+    topCompanies: ["NITI Aayog", "PRS Legislative Research", "Samagra Governance", "Dalberg", "Tata Trusts"],
+    topPeople: [
+      {
+        name: "Aruna Roy",
+        story: "A former IAS officer who resigned to work for social justice. Her activism was crucial in the passage of the Right to Information (RTI) Act, a landmark policy that has empowered millions of Indians."
       }
     ]
   },
