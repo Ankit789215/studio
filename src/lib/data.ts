@@ -396,6 +396,7 @@ export const colleges: College[] = [
     title: string;
     description: string;
     category: 'Admissions' | 'Scholarships' | 'Exams';
+    details: string;
   };
   
   export const timelineEvents: TimelineEvent[] = [
@@ -405,6 +406,7 @@ export const colleges: College[] = [
       title: 'Delhi University UG Admissions Open',
       description: 'Online application portal for undergraduate courses at Delhi University opens today.',
       category: 'Admissions',
+      details: 'The Common Seat Allocation System (CSAS) portal will be open for registration. Students must fill in their personal details, academic scores, and upload necessary documents. The deadline for Phase 1 is August 31st.'
     },
     {
       id: 'event-2',
@@ -412,6 +414,7 @@ export const colleges: College[] = [
       title: 'National Scholarship Portal Applications Deadline',
       description: 'Last day to apply for various central government scholarships through the NSP.',
       category: 'Scholarships',
+      details: 'Ensure all documents, including income certificate, caste certificate (if applicable), and bonafide student certificate from your institution, are uploaded. Late applications will not be accepted.'
     },
     {
       id: 'event-3',
@@ -419,6 +422,7 @@ export const colleges: College[] = [
       title: 'State Common Entrance Test (CET)',
       description: 'The entrance exam for state government colleges will be conducted today.',
       category: 'Exams',
+      details: 'The exam will be held in two shifts: 9 AM - 12 PM and 2 PM - 5 PM. Remember to bring your admit card and a valid photo ID. Electronic devices are strictly prohibited.'
     },
     {
       id: 'event-4',
@@ -426,6 +430,7 @@ export const colleges: College[] = [
       title: 'Mumbai University First Merit List',
       description: 'The first merit list for UG admissions will be declared.',
       category: 'Admissions',
+      details: 'The merit list will be published on the official university website and on the notice boards of individual colleges. Selected students must complete the admission formalities within three working days.'
     },
     {
         id: 'event-5',
@@ -433,6 +438,7 @@ export const colleges: College[] = [
         title: 'INSPIRE Scholarship Application Window',
         description: 'Applications open for the Innovation in Science Pursuit for Inspired Research (INSPIRE) scholarship.',
         category: 'Scholarships',
+        details: 'This scholarship is for students pursuing basic and natural sciences. Eligibility requires being in the top 1% of your 12th-grade board exams. The scholarship offers ₹80,000 per year.'
     },
     {
       id: 'event-6',
@@ -440,6 +446,7 @@ export const colleges: College[] = [
       title: 'UPSC Civil Services (Prelims) Exam',
       description: 'Preliminary examination for entry into the civil services of India.',
       category: 'Exams',
+      details: 'The exam consists of two objective-type papers (General Studies and CSAT). CSAT is a qualifying paper. The exam is held across various centers in India.'
     },
     {
       id: 'event-7',
@@ -447,6 +454,7 @@ export const colleges: College[] = [
       title: 'IIM CAT Exam',
       description: 'Common Admission Test for admission into Indian Institutes of Management.',
       category: 'Exams',
+      details: 'A computer-based test that assesses quantitative ability, verbal ability, reading comprehension, and data interpretation. Scores are used by over 100 business schools in India.'
     },
     {
       id: 'event-8',
@@ -454,6 +462,7 @@ export const colleges: College[] = [
       title: 'Kishore Vaigyanik Protsahan Yojana (KVPY) Results',
       description: 'Results for the KVPY fellowship aptitude test will be announced.',
       category: 'Scholarships',
+      details: 'The results will be available on the official KVPY website. Selected students will be called for an interview, which is the final stage of the selection process.'
     },
     {
       id: 'event-9',
@@ -461,6 +470,7 @@ export const colleges: College[] = [
       title: 'IIT-JEE (Main) - Session 1',
       description: 'First session of the Joint Entrance Examination for engineering admissions.',
       category: 'Exams',
+      details: 'This is one of the two sessions for the JEE Main exam. Students can appear in one or both sessions. The best of the two scores will be considered for ranking.'
     },
     {
       id: 'event-10',
@@ -468,6 +478,7 @@ export const colleges: College[] = [
       title: 'Jawaharlal Nehru University (JNU) PG Admissions',
       description: 'Application portal for postgraduate courses at JNU opens.',
       category: 'Admissions',
+      details: 'Admission is based on the JNU Entrance Examination (JNUEE). The application form, prospectus, and other details will be available on the JNU website.'
     }
   ];
 

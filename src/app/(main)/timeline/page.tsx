@@ -2,6 +2,12 @@ import { timelineEvents } from '@/lib/data';
 import { Badge } from '@/components/ui/badge';
 import { CalendarIcon, GraduationCap, PenSquare } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 const categoryConfig: {
   [key: string]: { icon: LucideIcon; color: string };
@@ -25,8 +31,8 @@ export default function TimelinePage() {
         </p>
       </div>
 
-      <div className="relative pl-6 after:absolute after:inset-y-0 after:w-px after:bg-border after:left-0">
-        {sortedEvents.map((event, index) => {
+      <Accordion type="single" collapsible className="w-full space-y-4">
+        {sortedEvents.map((event) => {
           const config = categoryConfig[event.category];
           const Icon = config?.icon || CalendarIcon;
           const formattedDate = new Date(event.date).toLocaleDateString('en-US', {
@@ -36,23 +42,30 @@ export default function TimelinePage() {
           });
 
           return (
-            <div key={event.id} className="relative grid grid-cols-[auto_1fr] items-start gap-x-6 pb-8">
-              <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background -left-[2.8rem] mt-1 ring-8 ring-background">
-                <Icon className={`h-5 w-5 ${config.color}`} />
-              </div>
-
-              <div className="flex-grow pt-1">
-                <div className="flex items-center justify-between">
-                    <p className="text-sm font-semibold text-muted-foreground">{formattedDate}</p>
-                    <Badge variant="secondary">{event.category}</Badge>
+            <AccordionItem key={event.id} value={event.id} className="border-b-0">
+              <div className="relative pl-12">
+                <div className="absolute left-0 top-0 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background ring-8 ring-background">
+                  <Icon className={`h-5 w-5 ${config.color}`} />
                 </div>
-                <h3 className="mt-1 text-lg font-semibold">{event.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{event.description}</p>
+
+                <AccordionTrigger className="flex-row-reverse justify-end gap-x-4 rounded-lg bg-muted/50 p-4 text-left hover:no-underline hover:bg-muted">
+                    <div className="flex-grow">
+                        <div className="flex items-center justify-between">
+                            <p className="text-sm font-semibold text-muted-foreground">{formattedDate}</p>
+                            <Badge variant="secondary">{event.category}</Badge>
+                        </div>
+                        <h3 className="mt-1 text-lg font-semibold">{event.title}</h3>
+                        <p className="mt-1 text-sm text-muted-foreground">{event.description}</p>
+                    </div>
+                </AccordionTrigger>
+                <AccordionContent className="p-4 pt-2">
+                    <p className="text-sm text-muted-foreground">{event.details}</p>
+                </AccordionContent>
               </div>
-            </div>
+            </AccordionItem>
           );
         })}
-      </div>
+      </Accordion>
     </div>
   );
 }
