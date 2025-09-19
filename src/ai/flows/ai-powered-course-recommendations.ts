@@ -26,6 +26,11 @@ export type RecommendCoursesAndCareersInput = z.infer<
 >;
 
 const RecommendCoursesAndCareersOutputSchema = z.object({
+  recommendedStream: z
+    .enum(['Science', 'Commerce', 'Arts'])
+    .describe(
+      'The recommended field of study (Science, Commerce, or Arts) based on the aptitude test.'
+    ),
   recommendedCourses: z
     .array(z.string())
     .describe('The list of recommended courses based on the quiz results and student profile.'),
@@ -52,14 +57,18 @@ const prompt = ai.definePrompt({
   output: {
     schema: RecommendCoursesAndCareersOutputSchema,
   },
-  prompt: `Based on the aptitude quiz results and the student's profile, recommend suitable courses and careers.
+  prompt: `Based on the aptitude quiz results and the student's profile, recommend the most suitable field of study (Science, Commerce, or Arts) and a list of suitable courses and careers.
 
 Aptitude Quiz Results: {{{JSON.stringify(quizResults)}}
 Student Profile: {{{JSON.stringify(studentProfile)}}}
 
-Consider the student's age, gender, class, and academic interests when making the recommendations.
-Explain the reasoning behind the recommendations, so the student can understand why these courses and careers are a good fit.
+First, determine which of the three streams - Science, Commerce, or Arts - is the best fit for the student based on their answers.
 
+Then, recommend a few specific courses and career paths that align with that stream and the student's profile.
+Consider the student's age, gender, class, and academic interests when making the recommendations.
+Explain the reasoning behind the recommendations, so the student can understand why these choices are a good fit.
+
+Output the recommended stream as a string.
 Output the courses as a list of strings in JSON format.
 Output the careers as a list of strings in JSON format.
 `,

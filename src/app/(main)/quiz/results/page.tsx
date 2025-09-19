@@ -11,8 +11,23 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight, BrainCircuit, Briefcase, Sparkles } from 'lucide-react';
+import {
+  ArrowRight,
+  BrainCircuit,
+  Briefcase,
+  FlaskConical,
+  Landmark,
+  Palette,
+  Sparkles,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { RecommendCoursesAndCareersOutput } from '@/ai/flows/ai-powered-course-recommendations';
+
+const streamIcons: { [key: string]: LucideIcon } = {
+  Science: FlaskConical,
+  Commerce: Landmark,
+  Arts: Palette,
+};
 
 function ResultsDisplay() {
   const searchParams = useSearchParams();
@@ -38,6 +53,7 @@ function ResultsDisplay() {
   }
 
   const recommendations: RecommendCoursesAndCareersOutput = JSON.parse(recommendationsParam);
+  const RecommendedStreamIcon = streamIcons[recommendations.recommendedStream] || BrainCircuit;
 
   return (
     <div className="space-y-8">
@@ -45,6 +61,18 @@ function ResultsDisplay() {
         <h1 className="text-3xl font-bold font-headline">Your Personalized Recommendations</h1>
         <p className="text-muted-foreground mt-2">Based on your quiz results, here are some paths you might excel in.</p>
       </div>
+
+      <Card className="border-primary border-2 text-center">
+        <CardHeader>
+          <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center">
+            <RecommendedStreamIcon className="h-8 w-8" />
+          </div>
+          <CardTitle className="mt-4">Your Recommended Stream is</CardTitle>
+          <CardDescription className="text-2xl font-bold text-primary">
+            {recommendations.recommendedStream}
+          </CardDescription>
+        </CardHeader>
+      </Card>
 
       <div className="grid md:grid-cols-2 gap-8">
         <Card>
