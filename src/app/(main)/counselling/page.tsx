@@ -17,7 +17,8 @@ import { Book, Briefcase, Calendar, Star } from 'lucide-react';
 const mentors = [
   {
     name: 'Ananya Sharma',
-    avatar: 'https://i.pravatar.cc/150?u=mentor1',
+    avatar: 'https://picsum.photos/seed/female-counsellor/150/150',
+    avatarHint: 'woman portrait',
     expertise: ['Career Coaching', 'Software Engineering', 'Interview Prep'],
     experience: '10+ Years at Google & Amazon',
     rating: 4.9,
@@ -25,7 +26,8 @@ const mentors = [
   },
   {
     name: 'Rohan Verma',
-    avatar: 'https://i.pravatar.cc/150?u=mentor2',
+    avatar: 'https://picsum.photos/seed/male-counsellor/150/150',
+    avatarHint: 'man portrait',
     expertise: ['Higher Education', 'Study Abroad', 'Data Science'],
     experience: 'Harvard Alumnus, Education Consultant',
     rating: 4.8,
@@ -33,7 +35,8 @@ const mentors = [
   },
   {
     name: 'Priya Mehta',
-    avatar: 'https://i.pravatar.cc/150?u=mentor3',
+    avatar: 'https://picsum.photos/seed/woman-entrepreneur/150/150',
+    avatarHint: 'woman smiling',
     expertise: ['Entrepreneurship', 'Business Strategy', 'Marketing'],
     experience: 'Founder of a successful tech startup',
     rating: 5.0,
@@ -55,10 +58,10 @@ export default function CounsellingPage() {
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {mentors.map((mentor) => (
-          <Card key={mentor.name} className="flex flex-col text-center hover:shadow-lg transition-shadow">
+          <Card key={mentor.name} className="flex flex-col text-center transition-shadow hover:shadow-lg">
             <CardHeader className="items-center">
               <Avatar className="h-24 w-24 mb-4">
-                <AvatarImage src={mentor.avatar} alt={mentor.name} />
+                <AvatarImage src={mentor.avatar} alt={mentor.name} data-ai-hint={mentor.avatarHint} />
                 <AvatarFallback>{mentor.name.charAt(0)}</AvatarFallback>
               </Avatar>
               <CardTitle>{mentor.name}</CardTitle>
