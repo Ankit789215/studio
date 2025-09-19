@@ -14,12 +14,17 @@ import {
   Atom,
   TestTube2,
   Dna,
-  FunctionSquare,
   Globe,
   Wallet,
   Building2,
   BarChart3,
   User,
+  DollarSign,
+  TrendingUp,
+  Video,
+  Users,
+  Award,
+  Building,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -43,7 +48,7 @@ export const quizQuestions = [
       { id: 'a', text: 'Analyze it logically and find a systematic solution.' },
       { id: 'b', text: 'Think about how it affects people and their emotions.' },
       { id: 'c', text: 'Experiment with different approaches to see what works.' },
-      { id: 'd', text: 'Brainstorm creative and unconventional ideas.' },
+      { id: 'd', text: 'A studio or open space that encourages creativity.' },
       { id: 'e', text: 'Develop a plan and delegate tasks to solve it efficiently.' },
     ],
   },
@@ -75,7 +80,7 @@ export const quizQuestions = [
     options: [
       { id: 'a', text: 'Think critically and solve logical challenges.' },
       { id: 'b', text: 'Communicate effectively and understand others.' },
-      { id: 'c', text: 'Be curious, observant, and detail-oriented.' },
+      { id: 'c', 'text': 'Be curious, observant, and detail-oriented.' },
       { id: 'd', text: 'Imagine and express new ideas.' },
       { id: 'e', text: 'Be organized, responsible, and a natural leader.' },
     ],
@@ -95,6 +100,17 @@ export type Course = {
   }[];
   furtherStudies: string[];
   govExams: string[];
+  careerGrowth: string;
+  packages: {
+    entry: string;
+    experienced: string;
+  };
+  videos: string[];
+  topCompanies: string[];
+  topPeople: {
+    name: string;
+    story: string;
+  }[];
 };
 
 export const courses: Course[] = [
@@ -112,6 +128,19 @@ export const courses: Course[] = [
     ],
     furtherStudies: ['M.Sc. in Physics', 'Ph.D. in Astrophysics', 'MCA'],
     govExams: ['UPSC Civil Services', 'SSC CGL', 'DRDO Scientist'],
+    careerGrowth: "With a strong foundation in physics, you can transition into roles in data science, engineering, or academia. Continuous learning and specialization are key to career progression.",
+    packages: {
+      entry: "₹4-7 Lakhs",
+      experienced: "₹12-25+ Lakhs"
+    },
+    videos: ["https://www.youtube.com/watch?v=A-tA0A-N_dI"],
+    topCompanies: ["ISRO", "DRDO", "TCS", "Wipro", "Accenture"],
+    topPeople: [
+      {
+        name: "Dr. C.V. Raman",
+        story: "A Nobel laureate in Physics for his work on light scattering. His relentless curiosity and dedication to research from a young age led him to groundbreaking discoveries."
+      }
+    ]
   },
   {
     id: 'bsc-chemistry',
@@ -127,12 +156,25 @@ export const courses: Course[] = [
     ],
     furtherStudies: ['M.Sc. in Chemistry', 'MBA in Pharma Management', 'Forensic Science'],
     govExams: ['FCI Manager', 'State PSC', 'Bank PO'],
+    careerGrowth: "Opportunities abound in pharmaceuticals, manufacturing, and R&D. A Master's degree can lead to senior research positions.",
+    packages: {
+      entry: "₹3-6 Lakhs",
+      experienced: "₹10-20 Lakhs"
+    },
+    videos: ["https://www.youtube.com/watch?v=rdjqA7yQv4I"],
+    topCompanies: ["Cipla", "Dr. Reddy's Labs", "Sun Pharma", "Nestle", "Hindustan Unilever"],
+    topPeople: [
+      {
+        name: "Venkatraman Ramakrishnan",
+        story: "A Nobel laureate in Chemistry, he pursued his passion for science across disciplines, starting with physics and eventually making seminal contributions to structural biology."
+      }
+    ]
   },
   {
     id: 'bsc-math',
     name: 'B.Sc. in Mathematics',
     stream: 'Science',
-    icon: FunctionSquare,
+    icon: Dna,
     description: 'Develop analytical and problem-solving skills through the study of numbers, structure, and space.',
     careerPaths: [
         { name: 'Actuary', icon: Calculator },
@@ -142,6 +184,19 @@ export const courses: Course[] = [
     ],
     furtherStudies: ['M.Sc. in Mathematics', 'MCA', 'M.Sc. in Data Science', 'Actuarial Science'],
     govExams: ['Indian Statistical Service', 'RBI Grade B', 'UPSC CSE'],
+    careerGrowth: "A degree in mathematics opens doors to high-demand fields like data science, finance, and software development. Specializing in areas like machine learning can lead to rapid growth.",
+    packages: {
+        entry: "₹5-9 Lakhs",
+        experienced: "₹15-40+ Lakhs"
+    },
+    videos: ["https://www.youtube.com/watch?v=N5vJSNXz7yQ"],
+    topCompanies: ["Goldman Sachs", "JP Morgan", "Google", "Microsoft", "Deloitte"],
+    topPeople: [
+        {
+            name: "Srinivasa Ramanujan",
+            story: "A self-taught mathematical genius who made extraordinary contributions to number theory. His journey from a clerk in Madras to a Fellow of the Royal Society is a story of pure passion and dedication."
+        }
+    ]
   },
   {
     id: 'bcom',
@@ -157,6 +212,19 @@ export const courses: Course[] = [
     ],
     furtherStudies: ['M.Com', 'MBA', 'Chartered Accountancy (CA)', 'Company Secretary (CS)'],
     govExams: ['RBI Grade B', 'SEBI Grade A', 'IBPS PO'],
+    careerGrowth: "Professional certifications like CA or an MBA can significantly accelerate career growth, leading to roles like CFO or financial controller.",
+    packages: {
+      entry: "₹3-6 Lakhs (Varies with certifications)",
+      experienced: "₹10-30+ Lakhs"
+    },
+    videos: ["https://www.youtube.com/watch?v=J_30nS2z2x0"],
+    topCompanies: ["Deloitte", "EY", "ICICI Bank", "HDFC Bank", "KPMG"],
+    topPeople: [
+      {
+        name: "Kumar Mangalam Birla",
+        story: "An eminent industrialist who took over the Aditya Birla Group at a young age. A Chartered Accountant by qualification, he transformed the group into a global conglomerate through strategic vision and financial acumen."
+      }
+    ]
   },
   {
     id: 'bba',
@@ -172,6 +240,19 @@ export const courses: Course[] = [
     ],
     furtherStudies: ['MBA', 'PGDM', 'Masters in Management'],
     govExams: ['UPSC', 'SSC CGL', 'Bank Manager'],
+    careerGrowth: "A BBA is a stepping stone to an MBA. With an MBA from a top institution, you can aim for leadership positions in multinational corporations within a few years.",
+    packages: {
+      entry: "₹4-7 Lakhs",
+      experienced: "₹15-50+ Lakhs (Post-MBA)"
+    },
+    videos: ["https://www.youtube.com/watch?v=I_gHq3L71-8"],
+    topCompanies: ["Hindustan Unilever", "Procter & Gamble", "McKinsey & Company", "Boston Consulting Group"],
+    topPeople: [
+      {
+        name: "Indra Nooyi",
+        story: "Former CEO of PepsiCo, she started her career in India and climbed the corporate ladder with her sharp business insights and leadership skills. She pursued an MBA from IIM Calcutta and a Master's from Yale."
+      }
+    ]
   },
   {
     id: 'ba-history',
@@ -187,6 +268,19 @@ export const courses: Course[] = [
     ],
     furtherStudies: ['M.A. in History', 'Ph.D. in History', 'Museology', 'Journalism'],
     govExams: ['UPSC Civil Services', 'State PSC', 'Archaeological Survey of India'],
+    careerGrowth: "While not always linear, a history degree hones analytical and writing skills valued in civil services, journalism, and law. A Master's or PhD is essential for academic careers.",
+    packages: {
+      entry: "₹3-5 Lakhs",
+      experienced: "Varies greatly by field (Govt. pay scales or media industry standards)"
+    },
+    videos: ["https://www.youtube.com/watch?v=v2o_S_N6_Wk"],
+    topCompanies: ["Archaeological Survey of India", "National Museum", "The Hindu Group", "Times of India"],
+    topPeople: [
+      {
+        name: "Ramachandra Guha",
+        story: "A renowned historian and writer, he chose to study history to understand the complexities of modern India. His deep research and compelling storytelling have made him a leading public intellectual."
+      }
+    ]
   },
   {
     id: 'ba-sociology',
@@ -202,6 +296,19 @@ export const courses: Course[] = [
     ],
     furtherStudies: ['M.A. in Sociology', 'MSW (Master of Social Work)', 'Public Policy'],
     govExams: ['UPSC', 'State Social Welfare Dept. jobs'],
+    careerGrowth: "A sociology degree provides critical thinking skills useful in HR, market research, and social work. Advanced degrees can lead to roles in policy-making and international development.",
+    packages: {
+      entry: "₹3-6 Lakhs",
+      experienced: "₹8-18 Lakhs"
+    },
+    videos: ["https://www.youtube.com/watch?v=ylXVn-s1z2Y"],
+    topCompanies: ["Nielsen", "Kantar", "GiveIndia", "Pratham Education Foundation"],
+    topPeople: [
+      {
+        name: "Gail Omvedt",
+        story: "An American-born Indian sociologist and human rights activist, she dedicated her life to anti-caste movements and farmers' rights in India, using her academic knowledge to fuel social change."
+      }
+    ]
   },
 ];
 
@@ -316,3 +423,5 @@ export const colleges: College[] = [
         category: 'Scholarships',
       },
   ];
+
+    
