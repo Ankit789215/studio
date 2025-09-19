@@ -26,7 +26,7 @@ export default function CoursesPage() {
       </div>
 
       {streams.map((stream) => (
-        <Card key={stream} className="hover:bg-muted/50 transition-colors duration-150">
+        <Card key={stream} className="transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
           <CardHeader>
             <CardTitle className="font-headline text-2xl">{stream}</CardTitle>
             <CardDescription>Courses and career paths in the {stream.toLowerCase()} stream.</CardDescription>
