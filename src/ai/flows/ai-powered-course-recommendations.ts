@@ -59,8 +59,8 @@ const prompt = ai.definePrompt({
   },
   prompt: `Based on the aptitude quiz results and the student's profile, recommend the most suitable field of study (Science, Commerce, or Arts) and a list of suitable courses and careers.
 
-Aptitude Quiz Results: {{{JSON.stringify(quizResults)}}
-Student Profile: {{{JSON.stringify(studentProfile)}}}
+Aptitude Quiz Results: {{{JSON.stringify quizResults}}}
+Student Profile: {{{JSON.stringify studentProfile}}}
 
 First, determine which of the three streams - Science, Commerce, or Arts - is the best fit for the student based on their answers.
 
