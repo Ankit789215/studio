@@ -37,7 +37,8 @@ const RecommendCoursesAndCareersOutputSchema = z.object({
   recommendedCareers: z
     .array(z.string())
     .describe('The list of recommended careers based on the quiz results and student profile.'),
-  reasoning: z.string().describe('Explanation of how courses were recommended.'),
+  bestCareerOption: z.string().describe('The single best career option from the recommended list.'),
+  reasoning: z.string().describe('Explanation of how courses and the best career were recommended.'),
 });
 export type RecommendCoursesAndCareersOutput = z.infer<
   typeof RecommendCoursesAndCareersOutputSchema
@@ -62,15 +63,12 @@ const prompt = ai.definePrompt({
 Aptitude Quiz Results: {{{JSON.stringify quizResults}}}
 Student Profile: {{{JSON.stringify studentProfile}}}
 
-First, determine which of the three streams - Science, Commerce, or Arts - is the best fit for the student based on their answers.
+1. First, analyze the quiz answers and student profile to determine which of the three streams - Science, Commerce, or Arts - is the best fit.
+2. Then, recommend a few specific courses and a list of career paths that align with that stream and the student's profile.
+3. From the list of recommended careers, identify the single best career option that is the strongest match.
+4. Finally, provide a clear and concise reasoning for your recommendations, explaining why the stream, courses, and especially the best career option are a good fit for the student.
 
-Then, recommend a few specific courses and career paths that align with that stream and the student's profile.
-Consider the student's age, gender, class, and academic interests when making the recommendations.
-Explain the reasoning behind the recommendations, so the student can understand why these choices are a good fit.
-
-Output the recommended stream as a string.
-Output the courses as a list of strings in JSON format.
-Output the careers as a list of strings in JSON format.
+Output the recommended stream, a list of courses, a list of careers, the single best career option, and the reasoning.
 `,
 });
 

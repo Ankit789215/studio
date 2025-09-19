@@ -19,6 +19,7 @@ import {
   Landmark,
   Palette,
   Sparkles,
+  Target,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { RecommendCoursesAndCareersOutput } from '@/ai/flows/ai-powered-course-recommendations';
@@ -62,17 +63,30 @@ function ResultsDisplay() {
         <p className="text-muted-foreground mt-2">Based on your quiz results, here are some paths you might excel in.</p>
       </div>
 
-      <Card className="border-primary border-2 text-center">
-        <CardHeader>
-          <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center">
-            <RecommendedStreamIcon className="h-8 w-8" />
-          </div>
-          <CardTitle className="mt-4">Your Recommended Stream is</CardTitle>
-          <CardDescription className="text-2xl font-bold text-primary">
-            {recommendations.recommendedStream}
-          </CardDescription>
-        </CardHeader>
-      </Card>
+      <div className="grid md:grid-cols-2 gap-8">
+          <Card className="border-primary border-2 text-center flex flex-col justify-center">
+            <CardHeader>
+              <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center">
+                <RecommendedStreamIcon className="h-8 w-8" />
+              </div>
+              <CardTitle className="mt-4">Your Recommended Stream</CardTitle>
+              <CardDescription className="text-2xl font-bold text-primary">
+                {recommendations.recommendedStream}
+              </CardDescription>
+            </CardHeader>
+          </Card>
+          <Card className="border-accent border-2 text-center flex flex-col justify-center">
+            <CardHeader>
+              <div className="mx-auto bg-accent text-accent-foreground rounded-full h-16 w-16 flex items-center justify-center">
+                <Target className="h-8 w-8" />
+              </div>
+              <CardTitle className="mt-4">Your Top Career Match</CardTitle>
+              <CardDescription className="text-2xl font-bold text-accent">
+                {recommendations.bestCareerOption}
+              </CardDescription>
+            </CardHeader>
+          </Card>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-8">
         <Card>
@@ -101,10 +115,10 @@ function ResultsDisplay() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Briefcase className="text-primary" />
-              Potential Career Paths
+              Other Potential Career Paths
             </CardTitle>
             <CardDescription>
-              Your skills could be a great fit for these professions.
+              Your skills could also be a great fit for these professions.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -120,7 +134,7 @@ function ResultsDisplay() {
         </Card>
       </div>
 
-      <Card className="bg-secondary/50">
+      <Card className="bg-muted/50">
         <CardHeader>
           <CardTitle>Why These Recommendations?</CardTitle>
         </CardHeader>
