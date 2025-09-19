@@ -4,8 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Bot, Loader2, Send, Sparkles, User } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Bot, Loader2, Send, User } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -90,37 +89,31 @@ export default function ChatPage() {
               </p>
             </div>
           )}
-          <AnimatePresence>
-            {messages.map((msg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className={`flex items-start gap-4 ${msg.role === 'user' ? 'justify-end' : ''}`}
-              >
-                {msg.role === 'model' && (
-                  <Avatar className="h-9 w-9 border">
-                    <AvatarFallback><Bot className="h-5 w-5"/></AvatarFallback>
-                  </Avatar>
-                )}
-                <div className={`rounded-lg p-3 max-w-lg ${msg.role === 'user' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
-                  <p className="text-sm">{msg.parts[0].text}</p>
-                </div>
-                {msg.role === 'user' && (
-                  <Avatar className="h-9 w-9 border">
-                     <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Student"/>
-                    <AvatarFallback>S</AvatarFallback>
-                  </Avatar>
-                )}
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          
+          {messages.map((msg, index) => (
+            <div
+              key={index}
+              className={`flex items-start gap-4 ${msg.role === 'user' ? 'justify-end' : ''}`}
+            >
+              {msg.role === 'model' && (
+                <Avatar className="h-9 w-9 border">
+                  <AvatarFallback><Bot className="h-5 w-5"/></AvatarFallback>
+                </Avatar>
+              )}
+              <div className={`rounded-lg p-3 max-w-lg ${msg.role === 'user' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+                <p className="text-sm">{msg.parts[0].text}</p>
+              </div>
+              {msg.role === 'user' && (
+                <Avatar className="h-9 w-9 border">
+                    <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Student"/>
+                  <AvatarFallback>S</AvatarFallback>
+                </Avatar>
+              )}
+            </div>
+          ))}
+          
           {isLoading && (
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
+            <div
                 className="flex items-start gap-4"
             >
                 <Avatar className="h-9 w-9 border">
@@ -130,7 +123,7 @@ export default function ChatPage() {
                     <Loader2 className="h-4 w-4 animate-spin"/>
                     <span className="text-sm text-muted-foreground">Thinking...</span>
                 </div>
-            </motion.div>
+            </div>
           )}
           <div ref={messagesEndRef} />
         </CardContent>
