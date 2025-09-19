@@ -14,11 +14,12 @@ import {
   Atom,
   TestTube2,
   Dna,
-  Functions,
+  FunctionSquare,
   Globe,
   Wallet,
   Building2,
-  BarChart3
+  BarChart3,
+  User,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -131,7 +132,7 @@ export const courses: Course[] = [
     id: 'bsc-math',
     name: 'B.Sc. in Mathematics',
     stream: 'Science',
-    icon: Functions,
+    icon: FunctionSquare,
     description: 'Develop analytical and problem-solving skills through the study of numbers, structure, and space.',
     careerPaths: [
         { name: 'Actuary', icon: Calculator },
