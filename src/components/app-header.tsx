@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import {
   PanelLeft,
@@ -9,6 +10,7 @@ import {
   School,
   User,
   Bot,
+  UserCheck,
 } from 'lucide-react';
 import {
   Sheet,
@@ -26,6 +28,7 @@ const navItems = [
   { href: '/colleges', icon: School, label: 'College Directory' },
   { href: '/timeline', icon: CalendarClock, label: 'Timeline' },
   { href: '/resources', icon: BookOpen, label: 'Learning Resources' },
+  { href: '/counselling', icon: UserCheck, label: 'Counselling' },
   { href: '/chat', icon: Bot, label: 'Mentor Chat' },
   { href: '/profile', icon: User, label: 'Profile' },
 ];

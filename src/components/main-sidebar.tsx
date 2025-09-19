@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -18,6 +19,7 @@ import {
   Settings,
   User,
   Bot,
+  UserCheck,
 } from 'lucide-react';
 import Logo from './logo';
 import { cn } from '@/lib/utils';
@@ -29,6 +31,7 @@ const navItems = [
   { href: '/colleges', icon: School, label: 'College Directory' },
   { href: '/timeline', icon: CalendarClock, label: 'Timeline' },
   { href: '/resources', icon: BookOpen, label: 'Learning Resources' },
+  { href: '/counselling', icon: UserCheck, label: 'Counselling' },
   { href: '/chat', icon: Bot, label: 'Mentor Chat' },
 ];
 
