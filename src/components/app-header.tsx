@@ -11,6 +11,7 @@ import {
   User,
   Bot,
   UserCheck,
+  Bell,
 } from 'lucide-react';
 import {
   Sheet,
@@ -68,6 +69,10 @@ export default function AppHeader() {
       </Sheet>
       <div className="ml-auto flex items-center gap-2">
         <ThemeToggle />
+        <Button variant="outline" size="icon" className="h-9 w-9">
+            <Bell className="h-5 w-5"/>
+            <span className="sr-only">Notifications</span>
+        </Button>
         <UserNav />
       </div>
     </header>
