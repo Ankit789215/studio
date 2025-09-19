@@ -66,7 +66,7 @@ export default function AppHeader() {
           </nav>
         </SheetContent>
       </Sheet>
-      <div className="ml-auto flex items-center gap-4">
+      <div className="ml-auto flex items-center gap-4 md:hidden">
         <ThemeToggle />
         <UserNav />
       </div>
