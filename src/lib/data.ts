@@ -48,7 +48,7 @@ export const quizQuestions = [
       { id: 'a', text: 'Analyze it logically and find a systematic solution.' },
       { id: 'b', text: 'Think about how it affects people and their emotions.' },
       { id: 'c', text: 'Experiment with different approaches to see what works.' },
-      { id: 'd', text: 'A studio or open space that encourages creativity.' },
+      { id: 'd', 'text': 'A studio or open space that encourages creativity.' },
       { id: 'e', text: 'Develop a plan and delegate tasks to solve it efficiently.' },
     ],
   },
@@ -409,7 +409,7 @@ export const colleges: College[] = [
     {
       id: 'event-2',
       date: '2024-08-15',
-      title: 'National Scholarship Portal Applications',
+      title: 'National Scholarship Portal Applications Deadline',
       description: 'Last day to apply for various central government scholarships through the NSP.',
       category: 'Scholarships',
     },
@@ -433,7 +433,42 @@ export const colleges: College[] = [
         title: 'INSPIRE Scholarship Application Window',
         description: 'Applications open for the Innovation in Science Pursuit for Inspired Research (INSPIRE) scholarship.',
         category: 'Scholarships',
-      },
+    },
+    {
+      id: 'event-6',
+      date: '2024-11-15',
+      title: 'UPSC Civil Services (Prelims) Exam',
+      description: 'Preliminary examination for entry into the civil services of India.',
+      category: 'Exams',
+    },
+    {
+      id: 'event-7',
+      date: '2024-11-30',
+      title: 'IIM CAT Exam',
+      description: 'Common Admission Test for admission into Indian Institutes of Management.',
+      category: 'Exams',
+    },
+    {
+      id: 'event-8',
+      date: '2024-12-15',
+      title: 'Kishore Vaigyanik Protsahan Yojana (KVPY) Results',
+      description: 'Results for the KVPY fellowship aptitude test will be announced.',
+      category: 'Scholarships',
+    },
+    {
+      id: 'event-9',
+      date: '2025-01-10',
+      title: 'IIT-JEE (Main) - Session 1',
+      description: 'First session of the Joint Entrance Examination for engineering admissions.',
+      category: 'Exams',
+    },
+    {
+      id: 'event-10',
+      date: '2025-02-01',
+      title: 'Jawaharlal Nehru University (JNU) PG Admissions',
+      description: 'Application portal for postgraduate courses at JNU opens.',
+      category: 'Admissions',
+    }
   ];
 
     
