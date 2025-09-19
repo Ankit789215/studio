@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Avatar,
   AvatarFallback,
@@ -16,25 +14,11 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
-import { useAuth } from '@/hooks/use-auth';
-import { getAuth, signOut } from 'firebase/auth';
-import { app } from '@/lib/firebase';
-import { useRouter } from 'next/navigation';
-
-const auth = getAuth(app);
 
 export default function UserNav() {
-  const { user } = useAuth();
-  const router = useRouter();
-
-  const handleLogout = async () => {
-    await signOut(auth);
-    router.push('/login');
-  };
-  
-  const userName = user?.displayName || user?.email?.split('@')[0] || 'Student';
-  const userEmail = user?.email || '';
-  const userAvatar = user?.photoURL || `https://i.pravatar.cc/150?u=${user?.uid}`;
+  const userName = 'Student';
+  const userEmail = 'student@example.com';
+  const userAvatar = `https://i.pravatar.cc/150?u=student`;
 
   return (
     <DropdownMenu>
@@ -62,7 +46,7 @@ export default function UserNav() {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={handleLogout}>Log out</DropdownMenuItem>
+        <DropdownMenuItem>Log out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
