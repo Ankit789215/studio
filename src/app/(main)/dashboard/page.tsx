@@ -114,13 +114,13 @@ export default function DashboardPage() {
         <Card className="md:col-span-2 transition-all duration-200 ease-in-out hover:scale-[1.03] hover:shadow-[0_4px_30px_5px_hsl(var(--primary)/0.3)]">
             <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                    <Sparkles className="text-accent"/>
-                    Daily Tips
+                    <LineChart className="text-accent"/>
+                    Impact of Education on Your Career
                 </CardTitle>
             </CardHeader>
             <CardContent>
                 <p className="text-muted-foreground">
-                Did you know? Data Scientists are one of the most in-demand professions. Sharpen your Python skills on free platforms like Coursera to get a head start!
+                A strong educational foundation is the cornerstone of a successful career. It not only equips you with specialized knowledge but also develops critical thinking, problem-solving, and communication skills that are invaluable in any profession. Continuous learning is key to adapting to new challenges and seizing future opportunities.
                 </p>
             </CardContent>
         </Card>
