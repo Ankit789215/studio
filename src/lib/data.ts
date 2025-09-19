@@ -25,6 +25,9 @@ import {
   Users,
   Award,
   Building,
+  Beaker,
+  Paintbrush,
+  Percent,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -199,6 +202,34 @@ export const courses: Course[] = [
     ]
   },
   {
+    id: 'bsc-foodtech',
+    name: 'B.Sc. in Food Technology',
+    stream: 'Science',
+    icon: Beaker,
+    description: 'A multidisciplinary field that applies food science to the selection, preservation, processing, packaging, and distribution of food.',
+    careerPaths: [
+        { name: 'Food Technologist', icon: Beaker },
+        { name: 'Quality Assurance Manager', icon: Scale },
+        { name: 'Product Development Scientist', icon: FlaskConical },
+        { name: 'Nutritionist', icon: Heart },
+    ],
+    furtherStudies: ['M.Sc. in Food Technology', 'MBA in Agribusiness', 'Ph.D. in Food Science'],
+    govExams: ['FSSAI Technical Officer', 'FCI Manager (Technical)'],
+    careerGrowth: "High growth potential in the booming food processing industry, with opportunities in R&D, quality control, and management. An MBA can fast-track to leadership roles.",
+    packages: {
+        entry: "₹4-6 Lakhs",
+        experienced: "₹10-25 Lakhs"
+    },
+    videos: ["https://www.youtube.com/watch?v=7M9i8z-n61A"],
+    topCompanies: ["Nestle", "Britannia", "ITC Limited", "Amul", "Parle"],
+    topPeople: [
+        {
+            name: "Dr. Verghese Kurien",
+            story: "Known as the 'Father of the White Revolution' in India, his 'billion-litre idea' created the world's largest agricultural development programme, making dairy farming India's largest self-sustaining industry."
+        }
+    ]
+  },
+  {
     id: 'bcom',
     name: 'B.Com. (Bachelor of Commerce)',
     stream: 'Commerce',
@@ -255,6 +286,34 @@ export const courses: Course[] = [
     ]
   },
   {
+    id: 'bsc-actuarial',
+    name: 'B.Sc. in Actuarial Science',
+    stream: 'Commerce',
+    icon: Percent,
+    description: 'A specialized degree focusing on the application of mathematical and statistical methods to assess risk in insurance, finance, and other industries.',
+    careerPaths: [
+        { name: 'Actuary', icon: Calculator },
+        { name: 'Risk Analyst', icon: BarChart3 },
+        { name: 'Insurance Underwriter', icon: Landmark },
+        { name: 'Data Analyst (Insurance)', icon: Code },
+    ],
+    furtherStudies: ['Masters in Actuarial Science', 'Fellowship from IAI/IFoA', 'MBA (Finance)'],
+    govExams: ['IRDAI Assistant Manager', 'NICL AO'],
+    careerGrowth: "Exceptional growth for qualified actuaries (after passing professional exams). It's a challenging but highly rewarding career path with global opportunities and high compensation.",
+    packages: {
+      entry: "₹6-10 Lakhs",
+      experienced: "₹25-75+ Lakhs (as a Fellow Actuary)"
+    },
+    videos: ["https://www.youtube.com/watch?v=uiGN3Yj9NUY"],
+    topCompanies: ["LIC", "HDFC Life", "ICICI Lombard", "WTW", "Milliman"],
+    topPeople: [
+      {
+        name: "N. M. Rothschild",
+        story: "While not a modern actuary, the Rothschild family pioneered many risk management and financial techniques that form the bedrock of actuarial science, building a global banking empire by managing risk better than anyone else."
+      }
+    ]
+  },
+  {
     id: 'ba-history',
     name: 'B.A. in History',
     stream: 'Arts',
@@ -307,6 +366,34 @@ export const courses: Course[] = [
       {
         name: "Gail Omvedt",
         story: "An American-born Indian sociologist and human rights activist, she dedicated her life to anti-caste movements and farmers' rights in India, using her academic knowledge to fuel social change."
+      }
+    ]
+  },
+  {
+    id: 'ba-museology',
+    name: 'B.A. in Museology/Museum Studies',
+    stream: 'Arts',
+    icon: Paintbrush,
+    description: 'Learn the art and science of managing museums, from collection management and curation to exhibition design and conservation.',
+    careerPaths: [
+        { name: 'Museum Curator', icon: Palette },
+        { name: 'Exhibition Designer', icon: PenTool },
+        { name: 'Conservator', icon: Award },
+        { name: 'Archivist', icon: Book },
+    ],
+    furtherStudies: ['M.A. in Museology', 'Ph.D. in Art History', 'Conservation Studies'],
+    govExams: ['National Museum recruitment', 'State museum curator jobs'],
+    careerGrowth: "A niche field with steady demand in government and private museums, art galleries, and cultural institutions. A Master's degree is almost essential for career progression to curator or director roles.",
+    packages: {
+      entry: "₹3-5 Lakhs",
+      experienced: "₹8-15 Lakhs"
+    },
+    videos: ["https://www.youtube.com/watch?v=Kk6y_y64jKA"],
+    topCompanies: ["National Museum, Delhi", "CSMVS, Mumbai", "Indian Museum, Kolkata", "Salar Jung Museum, Hyderabad", "Christie's"],
+    topPeople: [
+      {
+        name: "Dr. Kapila Vatsyayan",
+        story: "A leading scholar of Indian classical dance, art, and architecture, she was instrumental in establishing numerous cultural institutions in India, including the Indira Gandhi National Centre for the Arts, shaping how India's heritage is preserved and presented."
       }
     ]
   },
