@@ -66,11 +66,11 @@ export default function QuizPage() {
         academicInterests: ['Science', 'Technology'],
       };
 
-      const result = await recommendCourses({ quizResults: answers, studentProfile });
+      // We still call this to get recommendations, even if we don't use them on the next page immediately.
+      // This could be used later to personalize the course explorer.
+      await recommendCourses({ quizResults: answers, studentProfile });
 
-      const params = new URLSearchParams();
-      params.set('recommendations', JSON.stringify(result));
-      router.push(`/quiz/results?${params.toString()}`);
+      router.push(`/courses`);
     } catch (error) {
       console.error(error);
       toast({
