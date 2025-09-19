@@ -4,10 +4,10 @@ import { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Bot, Loader2, Send, User } from 'lucide-react';
+import { Loader2, Send, User } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -82,7 +82,10 @@ export default function ChatPage() {
         <CardContent className="flex-grow p-4 md:p-6 overflow-y-auto space-y-6">
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full text-center">
-              <Bot className="h-16 w-16 text-muted-foreground/50 mb-4" />
+              <Avatar className="h-16 w-16 mb-4">
+                <AvatarImage src="https://i.pravatar.cc/150?u=ai-mentor" alt="AI Mentor"/>
+                <AvatarFallback>AI</AvatarFallback>
+              </Avatar>
               <h2 className="text-xl font-semibold">Welcome to the AI Mentor Chat!</h2>
               <p className="text-muted-foreground max-w-md mt-2">
                 You can ask me anything about careers, courses, or skills. For example: "What are some good careers for someone who likes art?"
@@ -97,7 +100,8 @@ export default function ChatPage() {
             >
               {msg.role === 'model' && (
                 <Avatar className="h-9 w-9 border">
-                  <AvatarFallback><Bot className="h-5 w-5"/></AvatarFallback>
+                  <AvatarImage src="https://i.pravatar.cc/150?u=ai-mentor" alt="AI Mentor"/>
+                  <AvatarFallback>AI</AvatarFallback>
                 </Avatar>
               )}
               <div className={`rounded-lg p-3 max-w-lg ${msg.role === 'user' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
@@ -117,7 +121,8 @@ export default function ChatPage() {
                 className="flex items-start gap-4"
             >
                 <Avatar className="h-9 w-9 border">
-                    <AvatarFallback><Bot className="h-5 w-5"/></AvatarFallback>
+                    <AvatarImage src="https://i.pravatar.cc/150?u=ai-mentor" alt="AI Mentor"/>
+                    <AvatarFallback>AI</AvatarFallback>
                 </Avatar>
                 <div className="rounded-lg p-3 max-w-lg bg-muted flex items-center gap-2">
                     <Loader2 className="h-4 w-4 animate-spin"/>
