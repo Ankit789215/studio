@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -94,36 +93,28 @@ export default function QuizPage() {
           <Progress value={progress} className="mt-4" />
         </CardHeader>
         <CardContent className="min-h-[250px]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentStep}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.3 }}
+          <div>
+            <h2 className="text-lg font-semibold mb-4">
+              {currentQuestion.question}
+            </h2>
+            <RadioGroup
+              value={answers[currentQuestion.id]}
+              onValueChange={handleAnswerChange}
+              className="space-y-3"
             >
-              <h2 className="text-lg font-semibold mb-4">
-                {currentQuestion.question}
-              </h2>
-              <RadioGroup
-                value={answers[currentQuestion.id]}
-                onValueChange={handleAnswerChange}
-                className="space-y-3"
-              >
-                {currentQuestion.options.map((option) => (
-                  <div
-                    key={option.id}
-                    className="flex items-center space-x-2 p-3 rounded-md border border-transparent has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-accent/20"
-                  >
-                    <RadioGroupItem value={option.id} id={option.id} />
-                    <Label htmlFor={option.id} className="text-base font-normal cursor-pointer">
-                      {option.text}
-                    </Label>
-                  </div>
-                ))}
-              </RadioGroup>
-            </motion.div>
-          </AnimatePresence>
+              {currentQuestion.options.map((option) => (
+                <div
+                  key={option.id}
+                  className="flex items-center space-x-2 p-3 rounded-md border border-transparent has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-accent/20"
+                >
+                  <RadioGroupItem value={option.id} id={option.id} />
+                  <Label htmlFor={option.id} className="text-base font-normal cursor-pointer">
+                    {option.text}
+                  </Label>
+                </div>
+              ))}
+            </RadioGroup>
+          </div>
         </CardContent>
         <CardFooter>
           <Button
