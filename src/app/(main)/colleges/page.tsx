@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -51,7 +52,7 @@ export default function CollegesPage() {
           {filteredColleges.map((college) => {
             const FacilityIcon = facilityIcons[college.facilities[0]] || University;
             return (
-              <Card key={college.id} className="flex flex-col transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-primary/30">
+              <Card key={college.id} className="flex flex-col transition-all duration-200 ease-in-out hover:scale-[1.03] hover:shadow-[0_4px_30px_5px_hsl(var(--primary)/0.3)]">
                 <CardHeader>
                   <CardTitle>{college.name}</CardTitle>
                   <CardDescription className="flex items-center gap-2 pt-1">

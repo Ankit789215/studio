@@ -58,7 +58,7 @@ export default function CounsellingPage() {
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {mentors.map((mentor) => (
-          <Card key={mentor.name} className="flex flex-col text-center transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-primary/30">
+          <Card key={mentor.name} className="flex flex-col text-center transition-all duration-200 ease-in-out hover:scale-[1.03] hover:shadow-[0_4px_30px_5px_hsl(var(--primary)/0.3)]">
             <CardHeader className="items-center">
               <Avatar className="h-24 w-24 mb-4">
                 <AvatarImage src={mentor.avatar} alt={mentor.name} data-ai-hint={mentor.avatarHint} />
