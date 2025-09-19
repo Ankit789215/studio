@@ -20,6 +20,7 @@ import {
 import { Button } from '@/components/ui/button';
 import UserNav from './user-nav';
 import Logo from './logo';
+import { ThemeToggle } from './theme-toggle';
 
 const navItems = [
   { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -66,6 +67,7 @@ export default function AppHeader() {
         </SheetContent>
       </Sheet>
       <div className="ml-auto flex items-center gap-4">
+        <ThemeToggle />
         <UserNav />
       </div>
     </header>

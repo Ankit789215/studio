@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const quickLinks = [
   {
@@ -90,6 +91,7 @@ export default function DashboardPage() {
                 <Bell className="h-5 w-5"/>
                 <span className="sr-only">Notifications</span>
             </Button>
+            <ThemeToggle />
             <Link href="/profile">
                 <Avatar>
                     <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Student"/>
