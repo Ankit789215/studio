@@ -30,7 +30,7 @@ import {
   Percent,
   Leaf,
   Lightbulb,
-  MousePointerSquare,
+  MousePointerClick,
   Shield,
   Handshake,
 } from 'lucide-react';
@@ -406,7 +406,7 @@ export const courses: Course[] = [
     id: 'bdes-ux',
     name: 'B.Des. in UX/UI Design',
     stream: 'Arts',
-    icon: MousePointerSquare,
+    icon: MousePointerClick,
     description: 'Focuses on creating user-friendly and aesthetically pleasing digital products like websites and apps. A blend of creativity, psychology, and technology.',
     careerPaths: [
         { name: 'UX Designer', icon: User },
