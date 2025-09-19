@@ -22,9 +22,10 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog';
 import { Calendar } from '@/components/ui/calendar';
-import { Book, Briefcase, Calendar as CalendarIcon, Star, Clock, Video } from 'lucide-react';
+import { Book, Briefcase, Calendar as CalendarIcon, Star, Clock, Video, ExternalLink } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
+import Link from 'next/link';
 
 const mentors = [
   {
@@ -97,6 +98,7 @@ export default function CounsellingPage() {
   const [selectedMentor, setSelectedMentor] = useState<Mentor | null>(null);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [joiningSession, setJoiningSession] = useState<BookedSession | null>(null);
 
   const { toast } = useToast();
   
@@ -163,7 +165,9 @@ export default function CounsellingPage() {
                     <p className="font-semibold flex items-center gap-2"><CalendarIcon className="h-4 w-4" /> {format(session.date, 'EEEE, LLL do')}</p>
                     <p className="text-sm text-muted-foreground flex items-center justify-end gap-2"><Clock className="h-4 w-4" /> {session.time}</p>
                 </div>
-                <Button variant="outline" size="sm"><Video className="mr-2 h-4 w-4"/>Join Call</Button>
+                <Button variant="outline" size="sm" onClick={() => setJoiningSession(session)}>
+                  <Video className="mr-2 h-4 w-4"/>Join Call
+                </Button>
               </div>
             ))}
           </CardContent>
@@ -262,7 +266,38 @@ export default function CounsellingPage() {
           )}
         </DialogContent>
       </Dialog>
+      
+      <Dialog open={!!joiningSession} onOpenChange={() => setJoiningSession(null)}>
+        <DialogContent>
+          {joiningSession && (
+            <>
+              <DialogHeader>
+                <DialogTitle>Joining Session</DialogTitle>
+                <DialogDescription>
+                  You are about to join your mentorship session with {joiningSession.mentor.name}.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="py-4 space-y-4">
+                  <p>Your session is scheduled for <span className="font-semibold">{format(joiningSession.date, 'PPP')} at {joiningSession.time}</span>.</p>
+                  <p className="text-sm text-muted-foreground">In a real application, clicking the button below would open the Zoom application or a new browser tab.</p>
+                  <Button asChild className="w-full">
+                    <Link href={`https://zoom.us/j/${Math.floor(100000000 + Math.random() * 900000000)}`} target="_blank">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Join Dummy Zoom Meeting
+                    </Link>
+                  </Button>
+              </div>
+               <DialogFooter>
+                <Button variant="outline" onClick={() => setJoiningSession(null)}>Close</Button>
+              </DialogFooter>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
     </div>
   );
+
+    
 
     
