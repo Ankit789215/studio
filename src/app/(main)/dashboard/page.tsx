@@ -42,7 +42,7 @@ const quickLinks = [
   {
     title: 'Mentor Chat',
     description: 'Get AI-powered guidance.',
-    href: '#',
+    href: '/chat',
     icon: Bot,
     label: 'Chat Now',
   },

@@ -17,6 +17,7 @@ import {
   School,
   Settings,
   User,
+  Bot,
 } from 'lucide-react';
 import Logo from './logo';
 import { cn } from '@/lib/utils';
@@ -28,6 +29,7 @@ const navItems = [
   { href: '/colleges', icon: School, label: 'College Directory' },
   { href: '/timeline', icon: CalendarClock, label: 'Timeline' },
   { href: '/resources', icon: BookOpen, label: 'Learning Resources' },
+  { href: '/chat', icon: Bot, label: 'Mentor Chat' },
 ];
 
 const bottomNavItems = [

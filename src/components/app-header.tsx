@@ -8,6 +8,7 @@ import {
   PencilRuler,
   School,
   User,
+  Bot,
 } from 'lucide-react';
 import {
   Sheet,
@@ -25,6 +26,7 @@ const navItems = [
   { href: '/colleges', icon: School, label: 'College Directory' },
   { href: '/timeline', icon: CalendarClock, label: 'Timeline' },
   { href: '/resources', icon: BookOpen, label: 'Learning Resources' },
+  { href: '/chat', icon: Bot, label: 'Mentor Chat' },
   { href: '/profile', icon: User, label: 'Profile' },
 ];
 
