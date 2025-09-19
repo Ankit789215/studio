@@ -14,31 +14,42 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
+import { useAuth } from '@/hooks/use-auth';
+import { getAuth, signOut } from 'firebase/auth';
+import { app } from '@/lib/firebase';
+import { useRouter } from 'next/navigation';
+
+const auth = getAuth(app);
 
 export default function UserNav() {
-  // Mock user data
-  const user = {
-    name: 'Student',
-    email: 'student@example.com',
-    avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d',
+  const { user } = useAuth();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    router.push('/login');
   };
+  
+  const userName = user?.displayName || user?.email?.split('@')[0] || 'Student';
+  const userEmail = user?.email || '';
+  const userAvatar = user?.photoURL || `https://i.pravatar.cc/150?u=${user?.uid}`;
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-9 w-9">
-            <AvatarImage src={user.avatar} alt={user.name} />
-            <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
+            <AvatarImage src={userAvatar} alt={userName} />
+            <AvatarFallback>{userName.charAt(0).toUpperCase()}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">{user.name}</p>
+            <p className="text-sm font-medium leading-none">{userName}</p>
             <p className="text-xs leading-none text-muted-foreground">
-              {user.email}
+              {userEmail}
             </p>
           </div>
         </DropdownMenuLabel>
@@ -49,7 +60,7 @@ export default function UserNav() {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Log out</DropdownMenuItem>
+        <DropdownMenuItem onClick={handleLogout}>Log out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
